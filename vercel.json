@@ -5,7 +5,9 @@
             "src": "vercel.py",
             "use": "@vercel/python",
             "config": {
-                "runtime": "python3.9"
+                "runtime": "python3.9",
+                "maxLambdaSize": "50mb",
+                "buildCommand": "pip install --no-cache-dir -r requirements.txt"
             }
         }
     ],
@@ -14,5 +16,19 @@
             "src": "/(.*)",
             "dest": "vercel.py"
         }
-    ]
+    ],
+    "functions": {
+        "vercel.py": {
+            "memory": 3008,
+            "maxDuration": 60
+        }
+    },
+    "build": {
+        "env": {
+            "PIP_NO_CACHE_DIR": "1",
+            "PIP_NO_DEPS": "1",
+            "PYTHONUNBUFFERED": "1",
+            "NODE_OPTIONS": "--max_old_space_size=3072"
+        }
+    }
 } 
