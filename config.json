@@ -1,0 +1,17 @@
+{
+    "gemini_api_key": "AIzaSyApi6I9YbQxn81NejAciuw3N3HNEunJQgU",
+    "output_dir": "output",
+    "tts_model": "tts_models/en/vctk/vits",
+    "tts_speaker": "p230",
+    "max_retries": 3,
+    "prompt_settings": {
+        "language": "en",
+        "speaking_duration": "1 minute",
+        "style": "engaging and thought-provoking"
+    },
+    "audio_settings": {
+        "format": "wav",
+        "use_cpu": true,
+        "cleanup_after_generation": false
+    }
+} 
